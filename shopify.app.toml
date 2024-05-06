@@ -1,3 +1,36 @@
 # This file stores configurations for your Shopify app.
+import { Hydrogen } from '@shopify/hydrogen';
 
+const hydrogen = new Hydrogen({
+  domain: 'your-shopify-store.myshopify.com',
+  storefrontAccessToken: 'your-storefront-access-token'
+});
+
+// Fetch products from Shopify
+hydrogen.fetchProducts().then(products => {
+  // Display products in your app
+  products.forEach(product => {
+    // Create avatar with customizable attributes
+    const avatar = createAvatar(160, 60, 'hourglass');
+    avatar.displayProduct(product.image);
+    avatar 3-D displayProduct
+    // Allow user to try on clothes and shoes
+    avatar.tryOnProduct(product);
+// createAvatar.product(product)
+});
+
+function createAvatar(height, weight, bodyShape) {
+  return {
+    height: height,
+    weight: weight,
+    bodyShape: bodyShape,
+    bodyShape: skinny, regular, plus size
+    displayProduct: function(image) {
+      // Display product image on avatar
+    },
+    tryOnProduct: function(product) {
+      // Allow user to try on the product
+    }
+  };
+}
 scopes = "write_products"
